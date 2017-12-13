@@ -4,7 +4,6 @@ module Swordsman
   class Application
     def self.run
       p "Go Go! Let's Go!"
-      User.all
     end
   end
 end

@@ -1,12 +1,16 @@
 class <%= name.camelize %> < ActiveRecord::Migration[5.0]
   ## example
   def up
-    create_table :tables do |t|
-      t.timestamps      null: false
+     unless ActiveRecord::Base.connection.table_exists? 'tables'
+        create_table :tables do |t|
+          t.timestamps      null: false
+        end
     end
   end
   def down
-    drop_table: tables
+    if ActiveRecord::Base.connection.table_exists? 'tables'
+      drop_table: tables
+     end
   end
 
 end
