@@ -1,0 +1,12 @@
+class <%= name.camelize %> < ActiveRecord::Migration[5.0]
+  ## example
+  def up
+    create_table :tables do |t|
+      t.timestamps      null: false
+    end
+  end
+  def down
+    drop_table: tables
+  end
+
+end
