@@ -8,15 +8,19 @@ Bundler.require(:default)
 # $LOAD_PATH.unshift File.expand_path('../../app/controllers', __FILE__)
 # $LOAD_PATH.unshift File.expand_path('../../app/views', __FILE__)
 
-File.expand_path('../../app/models', __FILE__)
+Dir["#{File.expand_path('../../lib/generator', __FILE__)}/**/*.rb"].each {|file| require file }
+
+require File.expand_path('../../lib/words_game_engine/lib/words_game_engine.rb', __FILE__)
 
 Dir["#{File.expand_path('../../app/models', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../app/controllers', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../app/views', __FILE__)}/**/*.rb"].each {|file| require file }
 
 Dir["#{File.expand_path('../../bin', __FILE__)}/**/*.rb"].each {|file| require file }
-Dir["#{File.expand_path('../../lib', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../db', __FILE__)}/**/*.rb"].each {|file| require file }
+
+# Game Init
+Dir["#{File.expand_path('../initializer', __FILE__)}/**/*.rb"].each {|file| require file }
 
 ActiveRecord::Base.establish_connection(YAML.load_file('config/database.yml')['default'])
 
