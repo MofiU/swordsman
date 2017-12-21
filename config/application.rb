@@ -14,4 +14,3 @@ module Swordsman
 
   end
 end
-Swordsman::Application.instance.start_game

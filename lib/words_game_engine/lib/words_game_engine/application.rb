@@ -8,7 +8,7 @@ module WordsGameEngine
       loop do
         p 'please input command'
         #get the first key
-        input = gets.chomp[0]
+        input = STDIN.gets.chomp[0]
         next if input.nil?
         p "what you input is #{input}"
         eval("key_#{input}").click

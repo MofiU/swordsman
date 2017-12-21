@@ -1,4 +1,4 @@
-class <%= name.camelize %> < ActiveRecord::Migration[5.0]
+class <%= name.classify %> < ActiveRecord::Migration[5.0]
   ## example
   def up
      unless ActiveRecord::Base.connection.table_exists? 'tables'
@@ -9,7 +9,7 @@ class <%= name.camelize %> < ActiveRecord::Migration[5.0]
   end
   def down
     if ActiveRecord::Base.connection.table_exists? 'tables'
-      drop_table: tables
+      drop_table :tables
      end
   end
 

@@ -4,10 +4,6 @@ ROOT_PATH = File.expand_path('../../', __FILE__)
 require 'bundler/setup' # Set up gems listed in the Gemfile.
 Bundler.require(:default)
 
-# $LOAD_PATH.unshift File.expand_path('../../app/models', __FILE__)
-# $LOAD_PATH.unshift File.expand_path('../../app/controllers', __FILE__)
-# $LOAD_PATH.unshift File.expand_path('../../app/views', __FILE__)
-
 Dir["#{File.expand_path('../../lib/generator', __FILE__)}/**/*.rb"].each {|file| require file }
 
 require File.expand_path('../../lib/words_game_engine/lib/words_game_engine.rb', __FILE__)
