@@ -38,7 +38,7 @@ end
 
 desc "test"
 task :test do
-  # WordsGameEngine::AssetFactory.define do
+  # WordsGameEngine::FactoryBoy.define do
   #   factory :general_group do
   #     leader '王亮'
   #     name '某个门派'
@@ -47,6 +47,5 @@ task :test do
   # end
   # WordsGameEngine::AssetFactory.create(:general_group)
 
-  p Group.all
   # p WordsGameEngine::Asset::Group.all
 end

@@ -10,7 +10,7 @@ module Swordsman
     def rollback
       Dir["#{ROOT_PATH}/db/migrations/*.rb"].reverse_each do |file|
         basename = File.basename(file)
-        klass = basename[0...basename.rindex('_')].classify.constantize
+        klass = basename.remove(basename[0..basename.index('_')]).remove('.rb').classify.constantize
         klass.new.down
       end
     end
