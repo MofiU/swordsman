@@ -1,3 +1,4 @@
+# 快捷键设置
 module WordsGameEngine
   module HotKey
     extend ActiveSupport::Autoload

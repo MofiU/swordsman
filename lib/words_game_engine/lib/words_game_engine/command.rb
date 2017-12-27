@@ -1,3 +1,4 @@
+# 系统指令
 module WordsGameEngine
   module Command
     extend ActiveSupport::Autoload

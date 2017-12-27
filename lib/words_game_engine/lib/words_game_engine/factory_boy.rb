@@ -1,5 +1,6 @@
+# FactoryGirl 类似功能
 module WordsGameEngine
-  module AssetFactory
+  module FactoryBoy
     extend ActiveSupport::Autoload
     autoload :Asset
 
@@ -28,7 +29,7 @@ module WordsGameEngine
         define_method :factory do |name, &block|
           new_builder = builder_class.new
           new_builder.instance_eval(&block) if block_given?
-          AssetFactory.registry[name] = new_builder
+          FactoryBoy.registry[name] = new_builder
         end
       end
 
@@ -37,7 +38,7 @@ module WordsGameEngine
 
     def self.build(name, overrides = {})
       raise FactoryNotRegistry, "Invalid factory name" unless registry.key? name
-      attributes = AssetFactory.registry[name].attributes.merge(overrides)
+      attributes = FactoryBoy.registry[name].attributes.merge(overrides)
       const_get(name.to_s.classify).new(attributes)
     end
 
