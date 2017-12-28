@@ -38,16 +38,29 @@ end
 
 desc "test"
 task :test do
-  # WordsGameEngine::FactoryBoy.define do
-  #   factory :general_group do
-  #     leader '王亮'
-  #     name '某个门派'
-  #     principle '维护世界和平'
-  #   end
-  # end
-  # WordsGameEngine::AssetFactory.create(:general_group)
+  # race1 = Race.create!( name: '人类', base_mana: 200, base_health_point: 500, base_speed: 50, base_damage: 100, base_defense: 50,
+  #                     mana_increment: 100, health_point_increment: 200, speed_increment: 20, damage_increment: 50, defense_increment: 20)
+  # race2 = Race.create!( name: '石头人', base_mana: 200, base_health_point: 500, base_speed: 50, base_damage: 100, base_defense: 50,
+  #                       mana_increment: 100, health_point_increment: 200, speed_increment: 20, damage_increment: 50, defense_increment: 20)
+  # life1 = Life.create!(name: '王亮', age: 18, race: race1)
+  # life2 = Life.create!(name: '石头人喽啰', age: 18, race: race2)
+  # life1.fight([life2])
+  life1 = Life.first
+  life2 = Life.last
+  life1.fight([life2])
 
-  # p WordsGameEngine::Asset::Group.all
-  Life.create!(name: '王亮', age: 18)
-  p Life.all
+  # group = Group.create!(name: '正义联盟', principle: '维护世界和平')
+
+  group = Group.first
+  life1.join_group(group.id)
+  life2.join_group(group.id)
+
+  life1.display
+  p '=========='
+  life2.display
+
+  p '---------------------'
+
+  group.list
+
 end

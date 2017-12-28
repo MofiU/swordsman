@@ -9,13 +9,13 @@ class CreateLife < ActiveRecord::Migration[5.0]
       t.integer :current_mana, null: false
       t.integer :current_health_point, null: false
       t.integer :total_mana, null: false
-      t.integer :total_healthy_point, null: false
+      t.integer :total_health_point, null: false
       t.integer :damage, null: false
       t.integer :defense, null: false
       t.integer :speed, null: false
-      t.integer :level, null: false
-      t.integer :total_exp, null: false
-      t.integer :current_exp, null: false
+      t.integer :level, default: 1
+      t.integer :total_exp, default: 0
+      t.integer :current_exp, default: 0
       t.string :delete_at
       t.string :delete_by
       t.timestamps      null: false

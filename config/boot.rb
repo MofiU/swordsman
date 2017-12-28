@@ -8,9 +8,9 @@ Dir["#{File.expand_path('../../lib/generator', __FILE__)}/**/*.rb"].each {|file|
 
 require File.expand_path('../../lib/words_game_engine/lib/words_game_engine.rb', __FILE__)
 
+Dir["#{File.expand_path('../../app/helpers', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../app/models', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../app/views', __FILE__)}/**/*.rb"].each {|file| require file }
-Dir["#{File.expand_path('../../app/helpers', __FILE__)}/**/*.rb"].each {|file| require file }
 
 Dir["#{File.expand_path('../../bin', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../../db', __FILE__)}/**/*.rb"].each {|file| require file }
