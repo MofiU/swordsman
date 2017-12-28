@@ -11,7 +11,7 @@ module Swordsman
       Dir["#{ROOT_PATH}/db/migrations/*.rb"].reverse_each do |file|
         basename = File.basename(file)
         klass = basename.remove(basename[0..basename.index('_')]).remove('.rb').classify.constantize
-        klass.new.down
+        klass.migrate :down
       end
     end
   end

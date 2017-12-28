@@ -1,16 +1,9 @@
 class <%= name.classify %> < ActiveRecord::Migration[5.0]
-  ## example
-  def up
-     unless ActiveRecord::Base.connection.table_exists? 'tables'
-        create_table :tables do |t|
-          t.timestamps      null: false
-        end
+
+  def change
+    create_table :<%= name.remove('create_').pluralize %> do |t|
+      t.timestamps      null: false
     end
-  end
-  def down
-    if ActiveRecord::Base.connection.table_exists? 'tables'
-      drop_table :tables
-     end
   end
 
 end

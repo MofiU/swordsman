@@ -48,4 +48,6 @@ task :test do
   # WordsGameEngine::AssetFactory.create(:general_group)
 
   # p WordsGameEngine::Asset::Group.all
+  Life.create!(name: '王亮', age: 18)
+  p Life.all
 end
