@@ -1,10 +1,6 @@
 module Swordsman
   class DbMigrate < Thor::Group
     include Thor::Actions
-    argument :name
-    def self.source_root
-      File.expand_path('../templates', __FILE__)
-    end
 
     desc 'run migrate'
     def run_migration_file

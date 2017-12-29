@@ -11,6 +11,7 @@ class CreateGroupLife < ActiveRecord::Migration[5.0]
       t.string :delete_by
       t.timestamps      null: false
     end
+    add_index :group_lives, [:group_id, :life_id], unique: true
   end
 
 end

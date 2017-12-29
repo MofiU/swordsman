@@ -1,4 +1,4 @@
-module PlayerAction
+module LifeAction
 
   def fight(enemys)
     FightRenderer.processing(self, enemys)
@@ -20,10 +20,6 @@ module PlayerAction
 
   def current_group
     current_group_live.group
-  end
-
-  def group_title
-
   end
 
   def history_groups
