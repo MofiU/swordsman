@@ -1,0 +1,9 @@
+a: &a
+  category: player
+  action: show_menu
+aa:
+  <<: *a
+  action: show
+ab:
+  <<: *a
+  action: list

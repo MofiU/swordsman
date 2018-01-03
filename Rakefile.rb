@@ -50,6 +50,8 @@ end
 
 desc "test"
 task :test do
-  p Server::API::Player::ShowAction.call(1)
-  p Server::API::Map::ListAction.call
+  # p Server::API::Player::ShowAction.call(1)
+  # p Server::API::Map::ListAction.call
+
+  Client::Command::Player::Show.execute(1)
 end
