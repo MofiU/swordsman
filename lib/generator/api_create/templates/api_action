@@ -1,0 +1,12 @@
+module Server
+  module API
+    module <%= folder_name.classify %>
+      class <%= action_name.classify %>Action
+        def self.call
+          # write your code here
+          { return_code:0, return_info:  ''}
+        end
+      end
+    end
+  end
+end

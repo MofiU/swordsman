@@ -41,18 +41,15 @@ namespace :generator do
   end
 end
 
+namespace :api do
+  desc "quick create api template, Notice: please use rake 'api:create'"
+  task :create, [:folder_name, :action_name] do |t, args|
+    Swordsman::ApiCreate.start([args.folder_name, args.action_name])
+  end
+end
+
 desc "test"
 task :test do
-
-  gun = Weapon.first
-  group1 = Group.first
-  group2 = Group.last
-  enemys = Race.last.lives
-  liang = Life.find_or_create_by!(name: '王亮', age: 18, race: Race.first)
-  # liang.bag.list
-  liang.bag.pick_up(gun)
-  # liang.fight(enemys)
-  # liang.bag.drown_down(gun)
-  liang.bag.reload
-  liang.bag.list
+  p Server::API::Player::ShowAction.call(1)
+  p Server::API::Map::ListAction.call
 end
