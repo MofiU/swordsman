@@ -1,6 +1,6 @@
 a: &a
   category: player
-  action: show_menu
+  action: show
 aa:
   <<: *a
   action: show

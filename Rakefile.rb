@@ -30,7 +30,7 @@ end
 namespace :game do
   desc 'Start Game'
   task :start do
-    Swordsman::Application.instance.start_game
+    Client::Application.instance.listen
   end
 end
 
@@ -52,6 +52,6 @@ desc "test"
 task :test do
   # p Server::API::Player::ShowAction.call(1)
   # p Server::API::Map::ListAction.call
-
-  Client::Command::Player::Show.execute(1)
+  # Client::Command::Player::Show.execute
+  Client::Helper::PromoteHelper.new.ask("zhongwuchism?")
 end

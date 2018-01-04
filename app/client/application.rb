@@ -1,5 +1,6 @@
 require 'singleton'
 
+Dir["#{File.expand_path('../helper', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../command', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../controller', __FILE__)}/**/*.rb"].each {|file| require file }
 Dir["#{File.expand_path('../view', __FILE__)}/**/*.rb"].each {|file| require file }
@@ -7,7 +8,7 @@ Dir["#{File.expand_path('../view', __FILE__)}/**/*.rb"].each {|file| require fil
 module Client
 
   class Application
-    attr_reader :current_player
+    attr_reader :current_player, :hot_keys
     include Singleton
 
     def self.current_player
@@ -16,6 +17,17 @@ module Client
 
     def initialize
       @current_player = Server::Life.first
+      @hot_keys = YAML.load_file 'app/client/config/hot_key.yml'
+    end
+
+    def listen
+      loop do
+        p 'please input command'
+        hot_key = STDIN.gets.chomp
+        next if hot_key.nil?
+        command = hot_keys[hot_key]
+        Command.const_get("#{command['category'].classify}::#{command['action'].classify}").execute
+      end
     end
 
   end
