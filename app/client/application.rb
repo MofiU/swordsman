@@ -8,7 +8,8 @@ Dir["#{File.expand_path('../view', __FILE__)}/**/*.rb"].each {|file| require fil
 module Client
 
   class Application
-    attr_reader :current_player, :hot_keys
+    attr_reader :hot_keys
+    attr_accessor :current_player
     include Singleton
 
     def self.current_player
@@ -16,7 +17,8 @@ module Client
     end
 
     def initialize
-      @current_player = Server::Life.first
+      # @current_player = Server::Life.first
+      Command::Player::Create.execute
       @hot_keys = YAML.load_file 'app/client/config/hot_key.yml'
     end
 

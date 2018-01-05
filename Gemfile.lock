@@ -30,6 +30,7 @@ DEPENDENCIES
   activerecord
   activesupport
   colorize
+  i18n
   sqlite3
   thor
 

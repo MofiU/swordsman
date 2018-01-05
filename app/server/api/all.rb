@@ -4,5 +4,6 @@ module Server
 
     autoload :Player
     autoload :Map
+    autoload :Race
   end
 end

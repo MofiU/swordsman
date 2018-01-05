@@ -3,8 +3,7 @@ module Server
     module Player
       class ShowAction
         def self.call(player_id)
-          player = Server::Life.find player_id
-          { return_code:0, return_info: player }
+          Server::Life.find player_id
         end
       end
     end

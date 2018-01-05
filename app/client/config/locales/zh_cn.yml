@@ -1,0 +1,7 @@
+zh_cn:
+  player:
+    set_player_tip: 游戏开始之前，请设定您的游戏信息
+    set_name: 请输入角色昵称
+    set_sex: 男性玩家？(y/yes)
+    set_race: 请从列出的种族中选择一个种族序号输入
+    confirm_player: 确定不再修改？（y/yes）

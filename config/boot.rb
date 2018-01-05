@@ -25,6 +25,20 @@ require 'server/api/all'
 # 载入客户端
 require 'client/application'
 
+
+# 编码文件
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
+# 本地化默认中文
+# Where the I18n library should search for translation files
+I18n.load_path = Dir['app/client/config/locales/*yml'] #File.expand_path('../zh_cn.yml', __FILE__)
+I18n.available_locales = [:zh_cn]
+I18n.default_locale = :zh_cn
+
+
+puts I18n.t('player.set_name')
+
 # Game Init
 Dir["#{File.expand_path('../initializer', __FILE__)}/**/*.rb"].each {|file| require file }
 
