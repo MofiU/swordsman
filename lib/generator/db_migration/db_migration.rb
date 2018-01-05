@@ -8,7 +8,7 @@ module Swordsman
 
     desc 'create migration file'
     def create_migration_file
-      template "migration", "db/migrations/#{Time.now.strftime("%Y%m%d%H%M%S")}_#{name}.rb"
+      template "migration", "#{ROOT_PATH}/app/server/db/migrations/#{Time.now.strftime("%Y%m%d%H%M%S")}_#{name}.rb"
     end
   end
 end

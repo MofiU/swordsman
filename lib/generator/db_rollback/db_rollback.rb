@@ -4,7 +4,7 @@ module Swordsman
 
     desc 'rollback all tables'
     def rollback
-      Dir["#{ROOT_PATH}/db/migrations/*.rb"].reverse_each do |file|
+      Dir["#{ROOT_PATH}/app/server/db/migrations/*.rb"].sort.reverse_each do |file|
         basename = File.basename(file)
         klass = basename.remove(basename[0..basename.index('_')]).remove('.rb').classify.constantize
         klass.migrate :down

@@ -1,4 +1,5 @@
 # 生灵
+# 理论上应该还有一个player表 专门存储player信息
 module Server
   class Life < ActiveRecord::Base
     include LifeAction
@@ -20,6 +21,7 @@ module Server
     private
 
     def init_base_attributes
+      # 赋值操作优于方法调用，所以必须加self
       self.total_mana = race.base_mana   if total_mana.nil?
       self.total_health_point = race.base_health_point if total_health_point.nil?
 

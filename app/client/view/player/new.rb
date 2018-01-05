@@ -16,9 +16,9 @@ module Client
           promote_helper = Helper::PromoteHelper.new
           params = {}
           params[:name] = promote_helper.ask I18n.t('player.set_name'), :blue
-          params[:sex] = promote_helper.yes? I18n.t('player.set_sex'), :blue
+          params[:sex] = (promote_helper.yes? I18n.t('player.set_sex'), :blue) ? 'male' : 'famale'
           params[:age] = 18 #default value
-          promote_helper.say races.map { |race| "#{race.id}: #{race.name}" }.join("\n")
+          promote_helper.say races.map { |race| "#{race.id}: #{race.name}" }.join("\n"), :blue
           params[:race_id] = promote_helper.ask I18n.t('player.set_race'), :blue
           params
         end

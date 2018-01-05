@@ -13,12 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: 123456
+  username:
+  password:
   port: 3306
-  host: zengbo01.rnd.laxino.com
-  database: swordsman
-
-development:
-  <<: *default
-
+  host:

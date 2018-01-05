@@ -4,6 +4,7 @@ module Server
       extend ActiveSupport::Autoload
 
       autoload :ShowAction
+      autoload :CreateAction
     end
   end
 end

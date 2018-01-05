@@ -1,10 +1,9 @@
-#encoding: utf-8
 module Client
   module Helper
     class PromoteHelper < Thor
 
       desc "overwrite say", "system tip"
-      def say(message, color = :black)
+      def say(message, color = :blue)
         super ColorizedString[message].colorize(color)
       end
 

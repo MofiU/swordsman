@@ -27,8 +27,8 @@ require 'client/application'
 
 
 # 编码文件
-Encoding.default_external = Encoding::UTF_8
-Encoding.default_internal = Encoding::UTF_8
+# Encoding.default_external = Encoding::UTF_8
+# Encoding.default_internal = Encoding::UTF_8
 
 # 本地化默认中文
 # Where the I18n library should search for translation files
@@ -36,12 +36,13 @@ I18n.load_path = Dir['app/client/config/locales/*yml'] #File.expand_path('../zh_
 I18n.available_locales = [:zh_cn]
 I18n.default_locale = :zh_cn
 
-
-puts I18n.t('player.set_name')
-
 # Game Init
 Dir["#{File.expand_path('../initializer', __FILE__)}/**/*.rb"].each {|file| require file }
 
-# 连接DB
-ActiveRecord::Base.establish_connection(YAML.load_file('app/server/config/database.yml')['default'])
+YAML.load_file('app/server/config/database.yml')['default']
+
+# # 连接DB
+ActiveRecord::Base.establish_connection(YAML.load_file('app/server/config/database.yml')['development'])
+
+
 

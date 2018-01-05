@@ -1,4 +1,6 @@
-require File.expand_path('../config/application', __FILE__)
+
+require File.expand_path('../app/client/application', __FILE__)
+
 
 namespace :db do
   desc 'create migration file'
@@ -30,7 +32,7 @@ end
 namespace :game do
   desc 'Start Game'
   task :start do
-    Client::Application.instance.listen
+    Client::Application.instance.run
   end
 end
 
