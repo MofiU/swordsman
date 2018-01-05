@@ -37,7 +37,7 @@ module Client
       loop do
         puts '亲，想干哈呢？'
         hot_key = STDIN.gets.chomp
-        next if hot_key.nil?
+        next if hot_key.blank?
         command = hot_keys[hot_key]
         if command.blank?
           puts '无效的快捷键，请按H获取键位帮助'
