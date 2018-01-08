@@ -68,5 +68,5 @@ task :test do
   # p Server::API::Player::ShowAction.call(1)
   # p Server::API::Map::ListAction.call
   # Client::Command::Player::Show.execute
-  Client::Helper::PromoteHelper.new.ask("zhongwuchism?")
+  Client::Helper::PromoteHelper.new.ask("s?")
 end

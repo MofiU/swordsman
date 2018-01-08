@@ -2,7 +2,7 @@ class CreateBag < ActiveRecord::Migration[5.0]
 
   def change
     create_table :bags do |t|
-      t.belongs_to :life, foreign_key: true
+      t.belongs_to :life, foreign_key: true, null: false
       t.integer :kind_size, default: 100
       t.timestamps      null: false
     end

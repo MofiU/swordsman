@@ -29,13 +29,8 @@ module Server
       p "丢弃成功"
     end
 
-    def list
-      items.each do |item|
-        object = item.ref_class.classify.constantize.find(item.ref_id)
-        p "名字： #{object.name}"
-        p "数量: #{item.count}"
-        p '---------------------'
-      end
+    def effect(item_id)
+
     end
 
   end

@@ -2,7 +2,7 @@ class CreateLife < ActiveRecord::Migration[5.0]
 
   def change
     create_table :lives do |t|
-      t.belongs_to :race, foreign_key: true
+      t.belongs_to :race, foreign_key: true, null: false
       t.string :name, null: false
       t.integer :age, null: false
       t.string :sex, null: false, default: 'famale'

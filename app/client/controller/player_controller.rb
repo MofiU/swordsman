@@ -3,7 +3,7 @@ module Client
     class PlayerController < BaseController
 
       def show
-        render Application.instance.current_player
+        render
       end
 
       def new
@@ -16,7 +16,7 @@ module Client
         Application.instance.current_player = Server::API::Player::CreateAction.call(params)
         # 将玩家ID存入pid文件
         File.open('app/client/config/pid', 'w') { |file| file.write(Application.instance.current_player.id) }
-        View::Player::Create.render
+        render
       end
 
       def get(player_id)
@@ -24,7 +24,7 @@ module Client
       end
 
       def menu
-        View::Player::Menu.render
+        render
       end
 
     end

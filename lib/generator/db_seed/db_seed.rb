@@ -22,9 +22,9 @@ module Swordsman
     end
 
     def create_weapons
-      Server::Weapon.find_or_create_by!(name: 'SKS狙击步枪', damage: '5000')
-      Server::Weapon.find_or_create_by!(name: 'M416突击步枪', damage: '4000')
-      Server::Weapon.find_or_create_by!(name: '98k狙击步枪', damage: '10000')
+      Server::Item.find_or_create_by!(name: 'SKS狙击步枪', damage: '5000', category: 'weapon', description: '55开专用')
+      Server::Item.find_or_create_by!(name: 'M416突击步枪', damage: '4000', category: 'weapon', description: '胖头鱼双持M4')
+      Server::Item.find_or_create_by!(name: '98k狙击步枪', damage: '10000', category: 'weapon', description: '永远是别人的神枪手')
     end
 
     def create_maps

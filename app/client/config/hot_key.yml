@@ -4,9 +4,21 @@ a: &a
 aa:
   <<: *a
   action: show
-ab:
-  <<: *a
+
+b: &b
+  controller: bag
+  action: menu
+ba:
+  <<: *b
   action: list
+bb:
+  <<: *b
+  action: effect
+
 h:
   controller: application
   action: menu
+
+q:
+  controller: application
+  action: exit

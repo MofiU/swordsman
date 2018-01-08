@@ -28,8 +28,8 @@ module Client
         self.current_player = Controller::PlayerController.new.get current_player_id
       else
         Controller::PlayerController.new.new
-
       end
+      $current_player = self.current_player
     end
 
     def listen_keyboard
