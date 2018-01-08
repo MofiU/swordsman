@@ -1,9 +1,12 @@
 a: &a
-  category: player
-  action: show
+  controller: player
+  action: menu
 aa:
   <<: *a
   action: show
 ab:
   <<: *a
   action: list
+h:
+  controller: application
+  action: menu

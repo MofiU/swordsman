@@ -25,15 +25,15 @@ module Client
     def loading_player
       if File.exist?('app/client/config/pid')
         current_player_id = File.read('app/client/config/pid')
-        self.current_player = Command::Player::Get.execute current_player_id
+        self.current_player = Controller::PlayerController.new.get current_player_id
       else
-        Command::Player::Create.execute
-        # 是否可以考虑将其放入command内
-        File.open('app/client/config/pid', 'w') { |file| file.write(current_player.id) }
+        Controller::PlayerController.new.new
+
       end
     end
 
     def listen_keyboard
+      View::Application::Menu.render
       loop do
         puts '亲，想干哈呢？'
         hot_key = STDIN.gets.chomp
@@ -43,7 +43,8 @@ module Client
           puts '无效的快捷键，请按H获取键位帮助'
           next
         end
-        Command.const_get("#{command['category'].classify}::#{command['action'].classify}").execute
+        Controller.const_get("#{command['controller']}_controller".classify).new.send(command['action'])
+
       end
     end
 

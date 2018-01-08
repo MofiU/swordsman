@@ -8,6 +8,7 @@
 
 # 开始游戏
 
+`bundle install`
 `rake game:start`
 
 # 开发

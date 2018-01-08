@@ -1,10 +1,6 @@
 module Client
   module Controller
-    class BagController
-
-      def menu
-
-      end
+    class ApplicationController
 
     end
   end
