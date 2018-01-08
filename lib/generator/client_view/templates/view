@@ -1,0 +1,15 @@
+module Client
+  module View
+    module <%= folder_name.classify %>
+      class <%= action_name.classify %>
+
+        def self.render
+          # promote_helper = Helper::PromoteHelper.new
+          # font_helper = Helper::FontHelper.new
+        end
+
+
+      end
+    end
+  end
+end

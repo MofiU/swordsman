@@ -36,6 +36,19 @@ namespace :game do
   end
 end
 
+namespace :client do
+  desc 'create controller file'
+  task :controller, :name do |t, args|
+    Swordsman::ClientController.start([args.name])
+  end
+
+  desc 'create view file'
+  task :view, [:folder_name, :action_name] do |t, args|
+    Swordsman::ClientView.start([args.folder_name, args.action_name])
+  end
+
+end
+
 namespace :generator do
   desc "create generator task"
   task :create, :name do |t, args|

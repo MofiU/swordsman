@@ -6,6 +6,10 @@ Bundler.require(:default)
 
 # 将app目录加入autoload_paths 方便加载
 $:.unshift File.expand_path('../../app', __FILE__)
+$:.unshift File.expand_path('../../app/client/controller', __FILE__)
+
+# 载入controller的基础类
+require 'base_controller'
 
 # 将generator文件载入
 Dir["#{File.expand_path('../../lib/generator', __FILE__)}/**/*.rb"].each {|file| require file }

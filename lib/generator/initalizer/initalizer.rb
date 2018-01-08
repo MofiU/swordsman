@@ -6,7 +6,7 @@ module Swordsman
       File.expand_path('../templates', __FILE__)
     end
 
-    desc ' migration create user'
+    desc ' create a task'
     def create_task_file
       template "template", "lib/generator/#{name}/#{name}.rb"
     end

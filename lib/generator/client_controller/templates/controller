@@ -1,0 +1,7 @@
+module Client
+  module Controller
+    class <%= name.classify %>Controller < BaseController
+
+    end
+  end
+end

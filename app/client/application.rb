@@ -33,7 +33,8 @@ module Client
     end
 
     def listen_keyboard
-      View::Application::Menu.render
+      # TODO 如何实现不用每次都new一个controller?
+      Controller::ApplicationController.new.menu
       loop do
         puts '亲，想干哈呢？'
         hot_key = STDIN.gets.chomp

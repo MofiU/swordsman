@@ -1,10 +1,9 @@
-# 理论上应设计为观察者模式，单例执行 TOFIX
 module Client
   module Controller
-    class PlayerController
+    class PlayerController < BaseController
 
       def show
-        View::Player::Show.render(Application.instance.current_player)
+        render Application.instance.current_player
       end
 
       def new
