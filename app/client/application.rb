@@ -26,6 +26,7 @@ module Client
       if File.exist?('app/client/config/pid')
         current_player_id = File.read('app/client/config/pid')
         self.current_player = Controller::PlayerController.new.get current_player_id
+        puts "亲爱的 #{Helper::FontHelper.new.success_label current_player.name}，欢迎回来。"
       else
         Controller::PlayerController.new.new
       end
@@ -36,7 +37,7 @@ module Client
       # TODO 如何实现不用每次都new一个controller?
       Controller::ApplicationController.new.menu
       loop do
-        puts '亲，想干哈呢？'
+        puts '请输入指令：(H查看指令菜单)'
         hot_key = STDIN.gets.chomp
         next if hot_key.blank?
         command = hot_keys[hot_key]
